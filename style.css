@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding-top: 3rem;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+
+    position: fixed;
+    background-color: white;
+    height: 2rem;
+    width: 100%;
+
+    font-size: 32px;
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul a {
+    color: black;
+}
+
+.home-container {
+    height: 100vh;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.calc-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    height: 100vh;
+
+    padding: 5rem 0;
+}
+
+.list-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: 0;
+
+    text-align: center;
+    font-size: 32px;
+}
+
+button {
+    background-color: black;
+    color: white;
+
+    padding: 1rem;
+
+    border-radius: 4px;
+    border: none;
+
+    text-align: center;
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.result {
+    padding: 1rem;
+    font-size: 19px;
+    border: 1px solid black;
+    min-width: 13rem;
+    min-height: 13rem;
+}
