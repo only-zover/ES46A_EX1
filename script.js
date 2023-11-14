@@ -7,6 +7,7 @@ const listOL = document.querySelector('.list')
 const result = document.querySelector('.result')
 const calcBtn = document.querySelector(".calc-bt")
 
+window.addEventListener('load', listAvarageData)
 calcBtn.addEventListener('click', ()=> {
     let n = name.value
     let num1 = Number(n1.value)
@@ -46,5 +47,3 @@ function listAvarageData() {
         listOL.appendChild(list);
     })
 }
-
-window.onload(listAvarageData())
