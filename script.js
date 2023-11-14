@@ -8,16 +8,14 @@ const result = document.querySelector('.result')
 const calcBtn = document.querySelector(".calc-bt")
 
 calcBtn.addEventListener('click', ()=> {
-    let n = name.value;
-    let num1 = Number(n1.value);
-    let num2 = Number(n2.value);
-    let num3 = Number(n3.value);
-    let m = Number(med.value);
-    let mf = (num1 + num2 * 2 + num3 * 3 + m)/7;
+    let n = name.value
+    let num1 = Number(n1.value)
+    let num2 = Number(n2.value)
+    let num3 = Number(n3.value)
+    let m = Number(med.value)
+    let mf = (num1 + num2 * 2 + num3 * 3 + m) / 7
 
-    let data = JSON.parse(localStorage.getItem('avgData')) || [];
-    data.push({ n, mf });
-    localStorage.setItem('avgData', JSON.stringify(data));
+    setAvarageData()
 
     result.innerText=`${n} suas notas são:
     Nota 1: ${num1}
@@ -27,19 +25,24 @@ calcBtn.addEventListener('click', ()=> {
 
     Média final: ${mf.toFixed(2)}`
 
-    listData()
+    listAvarageData()
 })
 
-function listData() {
+function setAvarageData() {
+    let data = JSON.parse(localStorage.getItem('avgData')) || [];
+    data.push({ n, mf });
+    localStorage.setItem('avgData', JSON.stringify(data));
+}
+
+function listAvarageData() {
     let data = JSON.parse(localStorage.getItem('avgData')) || [];
 
     data.forEach((data) => {
         let list = document.createElement('li');
-        list.textContent = `Nome: ${data.n}, Média Final: ${data.mf.toFixed(2)}`;
+        list.innerHTML = `<b>${data.n} - Média Final: ${data.mf.toFixed(2)}</b>`;
 
-        // Adiciona o item de lista à lista ordenada
         listOL.appendChild(list);
     })
 }
 
-window.onload(listData())
+window.onload(listAvarageData())
