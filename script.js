@@ -15,7 +15,7 @@ calcBtn.addEventListener('click', ()=> {
     let m = Number(med.value)
     let mf = (num1 + num2 * 2 + num3 * 3 + m) / 7
 
-    setAvarageData()
+    setAvarageData(n, mf)
 
     result.innerText=`${n} suas notas são:
     Nota 1: ${num1}
@@ -28,7 +28,7 @@ calcBtn.addEventListener('click', ()=> {
     listAvarageData()
 })
 
-function setAvarageData() {
+function setAvarageData(n, mf) {
     let data = JSON.parse(localStorage.getItem('avgData')) || [];
     data.push({ n, mf });
     localStorage.setItem('avgData', JSON.stringify(data));
@@ -36,6 +36,8 @@ function setAvarageData() {
 
 function listAvarageData() {
     let data = JSON.parse(localStorage.getItem('avgData')) || [];
+
+    listOL.innerHTML = ''
 
     data.forEach((data) => {
         let list = document.createElement('li');
